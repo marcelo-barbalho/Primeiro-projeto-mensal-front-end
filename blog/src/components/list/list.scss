@@ -1,0 +1,145 @@
+$color1: #0b0c10;
+$color2: #1f2833;
+$color3: #c5c6c7;
+$color4: #66fcf1;
+$color5: #45a29e;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#root {
+  text-align: center;
+  background-color: $color1;
+  height: 100vh;
+}
+#src {
+  color: $color5;
+  margin: 1%;
+  margin-bottom: 0;
+  text-align: center;
+}
+.list {
+  max-width: 90%;
+  padding-right: auto;
+  padding-left: auto;
+  margin: auto;
+  color: $color5;
+}
+table {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  thead {
+    width: 100%;
+    border-radius: 13px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    background-color: $color3;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0, 03em;
+  }
+
+  tbody {
+    border-radius: 3px;
+    padding: 5px 15px;
+    justify-content: space-between;
+    margin-bottom: 0;
+    // background-color:$color2;
+    font-size: 12px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    max-height: 320px;
+    overflow-y: scroll;
+  }
+  .slot1 {
+    width: 7%;
+  }
+  .slot2 {
+    width: 7%;
+  }
+  .slot3 {
+    width: 34%;
+  }
+  .slot4 {
+    width: 42%;
+  }
+  .slot5 {
+    width: 10%;
+    min-width: 100px;
+  }
+}
+td {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  height: 30px;
+  background-color: $color2;
+  border-radius: 3px;
+  align-items: center;
+}
+tr {
+  width: 100%;
+  display: flex;
+  margin: 2px 0;
+}
+
+.delete {
+  cursor: pointer;
+  &:hover {
+    color: $color4;
+  }
+}
+#alertBox {
+  width: 30%;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  flex-direction: row;
+  background-color: $color2;
+  span {
+    margin: 10px;
+  }
+  .alert {
+    background-color: $color4;
+    color: $color1;
+    width: 15%;
+
+    margin-bottom: 3.5%;
+    border: none;
+    &:hover {
+      background-color: $color5;
+    }
+  }
+}
+.listNew {
+  background-color: $color2;
+  color: $color5;
+  border: none;
+
+  &:hover {
+    background-color: #313131;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(116, 115, 115);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(204, 204, 204);
+}

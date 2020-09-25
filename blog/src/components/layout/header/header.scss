@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f2833;
+  height: 45px;
+}
+.menuBox {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  background-color: #1f2833;
+  border-radius: 5px;
+}
+.menuBox button {
+  background-color: rgba(133, 133, 138, 0);
+  border: none;
+  color: #66fcf1;
+  padding: 3px;
+  &:hover {
+    color: #15a29e;
+  }
+}
+
+#bars {
+  color: #66fcf1;
+}
+.btnMenu {
+  width: 55px;
+  height: 32px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: rgba(133, 133, 138, 0);
+  border: none;
+}
+#hamburguer {
+  width: 50px;
+  height: 30px;
+}
+.btnBox {
+  margin-top: 0;
+}
