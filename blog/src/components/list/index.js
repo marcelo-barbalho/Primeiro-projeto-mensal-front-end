@@ -6,6 +6,7 @@ import { isAuth } from "../../config/auth";
 import { MdLocationSearching } from "react-icons/md";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { RiCheckboxBlankLine, RiCheckboxLine } from "react-icons/ri";
+import { FiEdit } from "react-icons/fi";
 // import { Table } from "reactstrap";
 
 export const UserList = (props) => {
@@ -68,7 +69,7 @@ export const UserList = (props) => {
         <td className="slot4">{user.email} </td>
         <td className="slot5">
           <span className="delete" onClick={() => editUser(user)}>
-            <AiOutlineEdit />
+            <FiEdit />
           </span>{" "}
           /
           <span className="delete" onClick={() => setAlert(user)}>
