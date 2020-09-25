@@ -9,8 +9,8 @@ const Login = (data) => clientHTTP.post(`/auth`, data);
 // const Delete = (email) => clientHTTP.delete(`/user/${email}`);
 const Delete = (userid) => clientHTTP.delete(`/user/${userid}`);
 
-const Edit = (data) => clientHTTP.patch(`/user`, data);
+const Edit = (data) => clientHTTP.patch(`/user/${data._id}`, data);
 
-const ShowUserId = (id) => clientHTTP.patch(`/user/${id}`);
+const ShowUserId = (id) => clientHTTP.get(`/user/${id}`);
 
 export { Create, List, Login, Delete, Edit, ShowUserId };

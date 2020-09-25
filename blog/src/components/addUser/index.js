@@ -9,6 +9,7 @@ const AddUser = (props) => {
     is_admin: false,
   });
   const [goLogin, setgoLogin] = useState(false);
+  const [goList, setgoList] = useState(false);
   const [isEdit, setisEdit] = useState(false);
   const { id } = useParams();
   const method = isEdit ? Edit : Create;
@@ -30,29 +31,33 @@ const AddUser = (props) => {
       setisEdit(true);
       showUser();
     }
-  });
+  }, [id]);
 
   const valid = () => {
     return form.name && form.email && form.password;
   };
   const submit = async (event) => {
+    console.log("teste");
+
     try {
-      event.preventDefault();
+      // event.preventDefault();
       await method(form);
       setForm({
+        ...form,
         is_active: true,
         is_admin: false,
       });
       window.alert(isEdit ? "Update Complete" : "User created");
-      setgoLogin(true);
+      isEdit ? setgoList(true) : setgoLogin(true);
     } catch (error) {
       alert("Erro no preenchimento");
+      console.log(error, error.msg);
     }
   };
 
   return (
     <div className="addUser">
-      <form>
+      <div className="formclass">
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -77,8 +82,9 @@ const AddUser = (props) => {
         <button disabled={!valid()} id="submit" onClick={submit}>
           {isEdit ? "Update" : "Submit"}
         </button>
-      </form>
+      </div>
       {goLogin && <Redirect to="../login" />}
+      {goList && <Redirect to="../list" />}
     </div>
   );
 };

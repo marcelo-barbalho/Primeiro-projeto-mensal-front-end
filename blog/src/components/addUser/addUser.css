@@ -17,7 +17,7 @@ label {
   background: linear-gradient(120deg, transparent, #050507 60%),
     url("../../assets/img/bgadd.jpg") no-repeat -150px -10px / cover;
 }
-form {
+.formclass {
   display: flex;
   flex-direction: column;
   width: 200px;

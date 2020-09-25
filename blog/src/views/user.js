@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/";
 import UserList from "../components/list";
+import AddUser from "../components/addUser";
 import jwt from "jsonwebtoken";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { getToken } from "../config/auth";
 
 const User = () => {
@@ -19,6 +20,7 @@ const User = () => {
     <Layout>
       <Switch>
         <Route exact match path="/list" component={UserList} />
+        <Route exact match path="/edit/:id" component={AddUser} />
       </Switch>
     </Layout>
   );

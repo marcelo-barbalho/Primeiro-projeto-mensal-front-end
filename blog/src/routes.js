@@ -18,7 +18,7 @@ const Routers = () => (
     <Switch>
       <Route path={"/login"} component={viewLogin} />
       <Route path={"/create"} component={UCreate} />
-      <CustomRoute path="/" component={viewUser} />
+      <CustomRoute path={"/"} component={viewUser} />
     </Switch>
   </Router>
 );

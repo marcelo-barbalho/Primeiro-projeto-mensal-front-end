@@ -60,6 +60,8 @@ button {
   color: #66fcf277;
   background-color: #1f28336b;
   border: none;
+  margin-top: 15px;
+  border-radius: 5px;
 }
 @media (max-width: 1093px) {
   .login {

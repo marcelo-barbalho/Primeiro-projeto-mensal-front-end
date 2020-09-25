@@ -3,6 +3,9 @@ import "./list.scss";
 import { List, Delete, Edit } from "../../services/user";
 import history from "../../config/history";
 import { isAuth, getToken } from "../../config/auth";
+import { MdLocationSearching } from "react-icons/md";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { RiCheckboxBlankLine, RiCheckboxLine } from "react-icons/ri";
 // import { Table } from "reactstrap";
 
 export const UserList = (props) => {
@@ -44,23 +47,37 @@ export const UserList = (props) => {
       </div>
     );
   };
+  // const setIcon = (user) => {
+  //   if (user.is_admin == true) {
+  //     <AiFillCheckSquare />;
+  //   } else {
+  //     <AiTwotoneCheckSquare />;
+  //   }
+  // };
 
   const mountUsers = () =>
     users.map((user, index) => (
       <tr key={index}>
-        <td className="slot1">{user.is_active ? "sim" : "não"}</td>
-        <td className="slot2">{user.is_admin ? "sim" : "não"}</td>
+        <td className="slot1">
+          {user.is_active ? <RiCheckboxLine /> : <RiCheckboxBlankLine />}
+        </td>
+        <td className="slot2">
+          {user.is_admin ? <RiCheckboxLine /> : <RiCheckboxBlankLine />}
+        </td>
         <td className="slot3">{user.name} </td>
         <td className="slot4">{user.email} </td>
         <td className="slot5">
-          <span className="edit">Edit</span> /
+          <span className="delete" onClick={() => editUser(user)}>
+            <AiOutlineEdit />
+          </span>{" "}
+          /
           <span className="delete" onClick={() => setAlert(user)}>
-            Delete
+            <AiOutlineDelete />
           </span>
         </td>
       </tr>
     ));
-
+  // RiCheckboxBlankLine, RiCheckboxLine;
   const srcTable = () => {
     var input, filter, td, a, i, txtValue;
     input = document.getElementById("src");
@@ -88,9 +105,7 @@ export const UserList = (props) => {
     }
   };
 
-  // const editUser = async () => {
-
-  // };
+  const editUser = (user) => props.history.push(`/edit/${user._id}`);
 
   useEffect(() => {
     getList();
@@ -98,6 +113,7 @@ export const UserList = (props) => {
 
   return (
     <div className="list">
+      <MdLocationSearching />
       <input
         type="text"
         id="src"
