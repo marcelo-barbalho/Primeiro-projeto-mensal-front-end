@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 
 const UCreate = () => {
   return (
-    <Layout>
+    <Layout title={"Create User"}>
       <Switch>
         <AddUser />
       </Switch>

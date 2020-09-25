@@ -46,6 +46,10 @@ input {
   border-radius: 5px;
   height: 25px;
 }
+input,
+textarea {
+  color: #66fcf26c;
+}
 button {
   padding: 5px;
   margin-top: 15px;

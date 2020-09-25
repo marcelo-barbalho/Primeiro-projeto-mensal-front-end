@@ -17,7 +17,7 @@ const User = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout info={useInfo}>
       <Switch>
         <Route exact match path="/list" component={UserList} />
         <Route exact match path="/edit/:id" component={AddUser} />

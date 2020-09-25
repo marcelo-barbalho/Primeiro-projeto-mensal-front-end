@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./list.scss";
-import { List, Delete, Edit } from "../../services/user";
+import { List, Delete } from "../../services/user";
 import history from "../../config/history";
-import { isAuth, getToken } from "../../config/auth";
+import { isAuth } from "../../config/auth";
 import { MdLocationSearching } from "react-icons/md";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { RiCheckboxBlankLine, RiCheckboxLine } from "react-icons/ri";

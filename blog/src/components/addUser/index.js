@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./addUser.css";
 import { Create, Edit, ShowUserId } from "../../services/user";
 import { Redirect, useParams } from "react-router-dom";
+// import { CustomInput, FormGroup } from "reactstrap";
 
 const AddUser = (props) => {
   const [form, setForm] = useState({
@@ -37,8 +38,6 @@ const AddUser = (props) => {
     return form.name && form.email && form.password;
   };
   const submit = async (event) => {
-    console.log("teste");
-
     try {
       // event.preventDefault();
       await method(form);
@@ -54,7 +53,6 @@ const AddUser = (props) => {
       console.log(error, error.msg);
     }
   };
-
   return (
     <div className="addUser">
       <div className="formclass">
@@ -79,6 +77,7 @@ const AddUser = (props) => {
           onChange={change}
           value={form.password || ""}
         />
+
         <button disabled={!valid()} id="submit" onClick={submit}>
           {isEdit ? "Update" : "Submit"}
         </button>
