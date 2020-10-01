@@ -5,6 +5,7 @@ import AddUser from "../components/addUser";
 import jwt from "jsonwebtoken";
 import { Route, Switch } from "react-router-dom";
 import { getToken } from "../config/auth";
+import UserProfile from "../components/profile";
 
 const User = () => {
   const [useInfo, setuseInfo] = useState({});
@@ -19,6 +20,7 @@ const User = () => {
   return (
     <Layout info={useInfo}>
       <Switch>
+        <Route exact match path="/" component={UserProfile} />
         <Route exact match path="/list" component={UserList} />
         <Route exact match path="/edit/:id" component={AddUser} />
       </Switch>

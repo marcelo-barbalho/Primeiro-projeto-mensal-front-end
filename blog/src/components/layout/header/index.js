@@ -5,6 +5,7 @@ import history from "../../../config/history";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import UserProfile from "../../profile";
 // import { BiUser } from "react-icons/bi";
 
 function Header(props) {
@@ -22,6 +23,10 @@ function Header(props) {
     history.push("/list");
     setMenu(false);
   };
+  const homeBtn = () => {
+    history.push("/");
+    setMenu(false);
+  };
 
   return (
     <header className="Header">
@@ -32,10 +37,7 @@ function Header(props) {
       </button>
       {menu && (
         <div className="menuBox">
-          <button
-            className="btnBox"
-            onClick={() => console.log(props.info.user.name)}
-          >
+          <button className="btnBox" onClick={() => homeBtn()}>
             Home
           </button>
           <button className="btnBox" onClick={() => listBtn()}>

@@ -29,7 +29,7 @@ const LoginPage = (props) => {
         saveToken(token);
         setAuth({});
 
-        history.push("/list");
+        history.push("/");
       }
     } catch (error) {
       alert("Usuário ou senha incorretos");

@@ -13,4 +13,16 @@ const Edit = (data) => clientHTTP.patch(`/user/${data._id}`, data);
 
 const ShowUserId = (id) => clientHTTP.get(`/user/${id}`);
 
-export { Create, List, Login, Delete, Edit, ShowUserId };
+const CreateProfile = (data) => clientHTTP.post(`/profile`, data);
+const EditProfile = (data) => clientHTTP.patch(`/profile/${data._id}`, data);
+
+export {
+  Create,
+  EditProfile,
+  List,
+  Login,
+  Delete,
+  Edit,
+  ShowUserId,
+  CreateProfile,
+};
